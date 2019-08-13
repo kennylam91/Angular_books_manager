@@ -1,1 +1,21 @@
-<p>book-create works!</p>
+<h4>Create New Book</h4>
+<div>
+  <form [formGroup]="bookCreateForm" (ngSubmit)="createBook()">
+    <div>
+      <label> Title:
+        <input type="text" formControlName="title">
+      </label>
+    </div>
+    <div>
+      <label> Author:
+      </label>
+      <input type="text" formControlName="author">
+    </div>
+    <div>
+      <label> Description:</label>
+      <input type="text" formControlName="description">
+    </div>
+    <button type="submit">Create</button>
+    <button>Cancel</button>
+  </form>
+</div>

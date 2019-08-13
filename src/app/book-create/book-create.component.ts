@@ -21,4 +21,18 @@ export class BookCreateComponent implements OnInit {
     });
   }
 
+  createBook() {
+    if (this.bookCreateForm.valid) {
+      const {value} = this.bookCreateForm;
+      this.bookService.createBook(value)
+        .subscribe(next => {
+          this.bookService.bookList.push(next);
+          this.bookCreateForm.reset({
+            title: '',
+            author: '',
+            description: ''
+          });
+        });
+    }
+  }
 }

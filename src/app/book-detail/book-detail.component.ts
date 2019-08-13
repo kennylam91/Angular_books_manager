@@ -10,7 +10,12 @@ import {Subscription} from 'rxjs';
   styleUrls: ['./book-detail.component.css']
 })
 export class BookDetailComponent implements OnInit {
-  book: IBook;
+  book: IBook = {
+    id: 0,
+    title: '',
+    author: '',
+    description: ''
+  };
   sub: Subscription;
 
   constructor(private bookService: BookService, private activeRoute: ActivatedRoute) {
