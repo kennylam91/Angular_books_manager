@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {BookService} from '../book.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-book-create',
@@ -10,7 +11,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 export class BookCreateComponent implements OnInit {
   bookCreateForm: FormGroup;
 
-  constructor(private bookService: BookService, private formBuilder: FormBuilder) {
+  constructor(private bookService: BookService, private formBuilder: FormBuilder, private router: Router) {
   }
 
   ngOnInit() {
@@ -32,6 +33,7 @@ export class BookCreateComponent implements OnInit {
             author: '',
             description: ''
           });
+          this.router.navigateByUrl('/books');
         });
     }
   }
