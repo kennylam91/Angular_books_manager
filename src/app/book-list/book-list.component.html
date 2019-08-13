@@ -1,20 +1,24 @@
-<h4>All Book List</h4>
-<div class="mb-2">
-  <p>Total: {{books.length}} books</p>
-  <button type="submit">
-    <a routerLink="/book/create">Create Book</a>
-  </button>
+<div class="row mt-3 p-0">
+  <div class="col-sm-10">
+    <h3 class="text-primary">All Book List</h3>
+    <p>Total: {{books.length}} books</p>
+  </div>
+  <div class="col-sm-2 mb-2 d-block w-100 text-right">
+    <button class="btn btn-outline-primary justify-content-end" type="submit">
+      <a routerLink="/book/create">Create Book</a>
+    </button>
+  </div>
 </div>
 <div>
-  <table border="1" cellpadding="10px">
+  <table class="table table-bordered text-center">
     <thead>
-      <td>#</td>
-      <td>Name</td>
-      <td>Author</td>
-      <td>Action</td>
+    <td>#</td>
+    <td>Name</td>
+    <td>Author</td>
+    <td>Action</td>
     </thead>
     <tr *ngFor="let book of books; index as i">
-      <td>{{i+1}}</td>
+      <td>{{i + 1}}</td>
       <td>
         <a routerLink="/book/{{book.id}}">{{book.title}}</a>
       </td>
