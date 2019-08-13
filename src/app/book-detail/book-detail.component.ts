@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {IBook} from '../Book';
+import {BookService} from '../book.service';
+import {ActivatedRoute, ParamMap} from '@angular/router';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-book-detail',
@@ -6,10 +10,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./book-detail.component.css']
 })
 export class BookDetailComponent implements OnInit {
+  book: IBook;
+  sub: Subscription;
 
-  constructor() { }
+  constructor(private bookService: BookService, private activeRoute: ActivatedRoute) {
+  }
 
   ngOnInit() {
+    this.sub = this.activeRoute.paramMap.subscribe((paramMap: ParamMap) => {
+      const id = paramMap.get('id');
+      this.bookService.getBookById(Number(id))
+        .subscribe(next => {
+          this.book = next;
+          console.log(this.book);
+        });
+    });
   }
 
 }
