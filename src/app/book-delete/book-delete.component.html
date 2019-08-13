@@ -1,1 +1,8 @@
-<p>book-delete works!</p>
+<div>
+  <h4>Book Delete</h4>
+  <p>Book title: {{book.title}}</p>
+  <p>Book Author: {{book.author}}</p>
+  <p>Book Description: {{book.description}}</p>
+  <button type="submit" (click)="deleteBook()">Delete Book</button>
+  <button type="submit" routerLink="/books">Cancel</button>
+</div>

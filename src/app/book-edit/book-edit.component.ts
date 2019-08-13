@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {IBook} from '../Book';
-import {ActivatedRoute, ParamMap, RouterLinkActive} from '@angular/router';
+import {ActivatedRoute, ParamMap, Router, RouterLinkActive} from '@angular/router';
 import {Subscription} from 'rxjs';
 import {BookService} from '../book.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
@@ -16,7 +16,7 @@ export class BookEditComponent implements OnInit {
   bookUpdateForm: FormGroup;
 
   constructor(private activeRoute: ActivatedRoute, private bookService: BookService,
-              private formBuilder: FormBuilder) {
+              private formBuilder: FormBuilder, private router: Router) {
   }
 
   ngOnInit() {
@@ -35,4 +35,17 @@ export class BookEditComponent implements OnInit {
     });
   }
 
+  updateBook() {
+    if (this.bookUpdateForm.valid) {
+      const {value} = this.bookUpdateForm;
+      const data = {
+        ...this.book,
+        ...value
+      };
+      this.bookService.updateBook(data)
+        .subscribe(next => {
+          this.router.navigateByUrl('/books');
+        });
+    }
+  }
 }

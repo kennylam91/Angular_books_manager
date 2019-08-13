@@ -1,5 +1,5 @@
 <h4>Book Edit</h4>
-<form [formGroup]="bookUpdateForm">
+<form [formGroup]="bookUpdateForm" (ngSubmit)="updateBook()">
   <div>
     <label>Title:
       <input type="text" formControlName="title">
@@ -15,4 +15,5 @@
       <textarea formControlName="description" cols="100" rows="10"></textarea>
     </label>
   </div>
+  <button type="submit">Update</button>
 </form>
