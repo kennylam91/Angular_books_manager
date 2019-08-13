@@ -8,13 +8,15 @@ import {HttpClientModule} from '@angular/common/http';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import { BookCreateComponent } from './book-create/book-create.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { BookEditComponent } from './book-edit/book-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookListComponent,
     BookDetailComponent,
-    BookCreateComponent
+    BookCreateComponent,
+    BookEditComponent
   ],
   imports: [
     BrowserModule,
