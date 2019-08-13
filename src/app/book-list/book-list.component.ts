@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {IBook} from '../Book';
 
 @Component({
   selector: 'app-book-list',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
-
+  private books: IBook[];
   constructor() { }
 
   ngOnInit() {
