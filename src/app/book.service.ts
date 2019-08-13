@@ -30,4 +30,8 @@ export class BookService {
     return this.http.patch<IBook>(`${this.API_URL}/${book.id}`, book);
   }
 
+  deleteBook(id: number): Observable<IBook> {
+    return this.http.delete<IBook>(`${this.API_URL}/${id}`);
+  }
+
 }
