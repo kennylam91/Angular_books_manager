@@ -1,23 +1,25 @@
 <h4>Create New Book</h4>
-<div>
-  <form [formGroup]="bookCreateForm" (ngSubmit)="createBook()">
+<div class="p-3 border d-inline-block">
+  <form class="form-group" [formGroup]="bookCreateForm" (ngSubmit)="createBook()">
     <div>
       <label> Title:
-        <input type="text" formControlName="title">
       </label>
+      <input class="form-control" type="text" formControlName="title">
+
     </div>
     <div>
       <label> Author:
       </label>
-      <input type="text" formControlName="author">
+      <input class="form-control" type="text" formControlName="author">
     </div>
     <div>
-      <label> Description:
-        <textarea type="text" formControlName="description"></textarea>
-      </label>
+      <label> Description:</label>
+      <div>
+        <textarea class="form-control" type="text" formControlName="description" cols="100" rows="3"></textarea>
+      </div>
     </div>
-    <button type="submit">Create</button>
-    <button>
+    <button class="btn btn-primary m-3" type="submit">Create</button>
+    <button class="btn btn-warning">
       <a routerLink="/books">Cancel</a>
     </button>
   </form>
