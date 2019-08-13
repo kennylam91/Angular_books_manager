@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {BookService} from '../book.service';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-book-create',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./book-create.component.css']
 })
 export class BookCreateComponent implements OnInit {
+  bookCreateForm: FormGroup;
 
-  constructor() { }
+  constructor(private bookService: BookService, private formBuilder: FormBuilder) {
+  }
 
   ngOnInit() {
+    this.bookCreateForm = this.formBuilder.group({
+      title: [''],
+      author: [''],
+      description: ['']
+    });
   }
 
 }
