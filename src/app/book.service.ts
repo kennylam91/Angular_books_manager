@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class BookService {
-  private bookList: IBook[];
+  bookList: IBook[];
   private readonly API_URL = 'http://localhost:3000/books';
 
 
