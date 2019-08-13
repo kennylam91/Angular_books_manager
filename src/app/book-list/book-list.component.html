@@ -1,1 +1,24 @@
-<p>book-list works!</p>
+<h4>All Book List</h4>
+<div>
+  <p>Total: {{books.length}} books</p>
+  <button type="submit">Create books</button>
+</div>
+<div>
+  <table border="1">
+    <thead>
+      <td>#</td>
+      <td>Name</td>
+      <td>Author</td>
+      <td>Action</td>
+    </thead>
+    <tr *ngFor="let book of books; index as i">
+      <td>{{i+1}}</td>
+      <td>{{book.title}}</td>
+      <td>{{book.author}}</td>
+      <td>
+        <a>Delete</a> |
+        <a>Edit</a>
+      </td>
+    </tr>
+  </table>
+</div>
