@@ -18,7 +18,6 @@ export class BookListComponent implements OnInit {
       .subscribe(next => {
         this.bookService.bookList = next;
         this.books = next;
-        console.log(this.books);
       })
     ;
   }
