@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {BookService} from '../book.service';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 
 @Component({
@@ -16,8 +16,8 @@ export class BookCreateComponent implements OnInit {
 
   ngOnInit() {
     this.bookCreateForm = this.formBuilder.group({
-      title: [''],
-      author: [''],
+      title: ['', Validators.required],
+      author: ['', Validators.required],
       description: ['']
     });
   }
