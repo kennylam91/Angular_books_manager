@@ -25,4 +25,5 @@ export class BookService {
   createBook(book: Partial<IBook>): Observable<IBook> {
     return this.http.post<IBook>(this.API_URL, book);
   }
+
 }

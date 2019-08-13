@@ -1,1 +1,18 @@
-<p>book-edit works!</p>
+<h4>Book Edit</h4>
+<form [formGroup]="bookUpdateForm">
+  <div>
+    <label>Title:
+      <input type="text" formControlName="title">
+    </label>
+  </div>
+  <div>
+    <label>Author:
+      <input type="text" formControlName="author">
+    </label>
+  </div>
+  <div>
+    <label>Description:
+      <textarea formControlName="description" cols="100" rows="10"></textarea>
+    </label>
+  </div>
+</form>
